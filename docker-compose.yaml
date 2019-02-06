@@ -1,0 +1,6 @@
+version: '2'
+
+services:
+    bt_speaker:
+        build: .
+        privileged: true
