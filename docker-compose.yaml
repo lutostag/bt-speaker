@@ -4,3 +4,4 @@ services:
     bt_speaker:
         build: .
         privileged: true
+        network_mode: host
