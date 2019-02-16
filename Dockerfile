@@ -12,4 +12,6 @@ COPY entrypoint.sh /usr/local/bin/
 COPY bt_manager /usr/lib/python2.7/site-packages/bt_manager
 COPY config.ini.default /etc/bt_speaker/config.ini
 
+ENV DBUS_SYSTEM_BUS_ADDRESS=unix:path=/host/run/dbus/system_bus_socket
+
 CMD entrypoint.sh
