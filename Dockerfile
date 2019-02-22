@@ -11,6 +11,7 @@ COPY bt_speaker.py /usr/local/bin/bt_speaker
 COPY librtpsbc.so /usr/local/bin/librtpsbc.so
 COPY entrypoint.sh /usr/local/bin/
 COPY bt_manager /usr/lib/python2.7/site-packages/bt_manager
+COPY codecs /usr/local/include/rtpsbc
 COPY config.ini.default /etc/bt_speaker/config.ini
 
 ENV DBUS_SYSTEM_BUS_ADDRESS=unix:path=/host/run/dbus/system_bus_socket
