@@ -5,6 +5,7 @@ services:
         build: .
         privileged: true
         network_mode: host
+        hostname: shout
         labels:
             io.resin.features.kernel-modules: '1'
             io.resin.features.firmware: '1'
