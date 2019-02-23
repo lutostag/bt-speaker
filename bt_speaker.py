@@ -12,6 +12,7 @@ from bt_manager.uuid import BTUUID
 import dbus
 import dbus.mainloop.glib
 import signal
+import socket
 import subprocess
 import alsaaudio
 import math
@@ -87,6 +88,7 @@ class AutoAcceptSingleAudioAgent(BTAgent):
     def __init__(self, connect_callback, disconnect_callback):
         BTAgent.__init__(self, cb_notify_on_authorize=self.auto_accept_one)
         self.adapter = BTAdapter(config.get('bluez', 'device_path'))
+        self.adapter.set_property('Alias', socket.gethostname())
         self.adapter.set_property('Discoverable', config.getboolean('bluez', 'discoverable'))
         self.allowed_uuids = [ SERVICES["AdvancedAudioDistribution"].uuid, SERVICES["AVRemoteControl"].uuid ]
         self.connected = None
